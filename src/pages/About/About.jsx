@@ -126,7 +126,13 @@ function About() {
           and clean implementation, I’d love to hear from you.
         </Typography>
 
-        <Button variant="contained" size="large" onClick={() => navigate('/work')}>
+        <Button
+          variant="contained"
+          size="large"
+          component="a"
+          href="/Nhlakanipho%20Madlanga%20CV.pdf"
+          download="Nhlakanipho_Madlanga_CV.pdf"
+        >
           View My Resume
         </Button>
       </Box>
