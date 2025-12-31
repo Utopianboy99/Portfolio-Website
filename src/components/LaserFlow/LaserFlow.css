@@ -1,0 +1,83 @@
+.laser-flow-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.laser-core {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #00ff88 0%, #00cc66 50%, transparent 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 20px #00ff88, 0 0 40px rgba(0, 255, 136, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.laser-beam {
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #00ff88 50%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  box-shadow: 0 0 20px #00ff88;
+}
+
+.laser-1 {
+  width: 200px;
+  height: 4px;
+  animation: rotate-laser 8s linear infinite;
+  transform-origin: center;
+}
+
+.laser-2 {
+  width: 200px;
+  height: 4px;
+  animation: rotate-laser 8s linear infinite 2s;
+  transform-origin: center;
+}
+
+.laser-3 {
+  width: 200px;
+  height: 4px;
+  animation: rotate-laser 8s linear infinite 4s;
+  transform-origin: center;
+}
+
+.laser-4 {
+  width: 200px;
+  height: 4px;
+  animation: rotate-laser 8s linear infinite 6s;
+  transform-origin: center;
+}
+
+@keyframes rotate-laser {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px #00ff88, 0 0 40px rgba(0, 255, 136, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px #00ff88, 0 0 60px rgba(0, 255, 136, 0.5);
+    transform: scale(1.1);
+  }
+}

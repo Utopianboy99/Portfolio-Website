@@ -10,6 +10,7 @@ import CognitionBerries from './pages/ProjectDetails/CognitionBerries'
 import CrewConnect from './pages/ProjectDetails/CrewConnect'
 import RoyalKidz from './pages/ProjectDetails/RoyalKidz'
 import ActiveMediaWebsite from './pages/ProjectDetails/ActiveMediaWebsite'
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
         <Route path="/project/crewconnect" element={<CrewConnect />} />
         <Route path="/project/cognition-berries" element={<CognitionBerries />} />
         <Route path="/project/royalkidz" element={<RoyalKidz />} />
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   )

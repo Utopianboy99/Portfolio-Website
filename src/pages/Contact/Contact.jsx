@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import Footer from "../../components/Footer/Footer";
 import {
@@ -20,27 +20,59 @@ function Contact() {
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  // Initialize EmailJS once on component mount
+  useEffect(() => {
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    if (!publicKey) {
+      console.warn("EmailJS Public Key is missing. Check your .env.local file.");
+    }
+    emailjs.init(publicKey || "");
+  }, []);
+
   const sendEmail = (e) => {
     e.preventDefault();
-
+    setStatus(null);
     setLoading(true);
 
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("Missing EmailJS credentials:", { serviceId, templateId, publicKey });
+      setStatus("error");
+      setLoading(false);
+      return;
+    }
+
+    // Create template params from form fields
+    const fd = new FormData(formRef.current);
+    const templateParams = {
+      from_name: fd.get("from_name") || "",
+      from_email: fd.get("from_email") || "",
+      subject: fd.get("subject") || "(No subject)",
+      message: fd.get("message") || "",
+    };
+
+    console.log("Email template params:", templateParams);
+
     emailjs
-      .sendForm(
-        "service_utw2tn9",
-        "__ejs-test-mail-service__",
-        formRef.current,
-        "YOUR_PUBLIC_KEY"
-      )
+      .send(serviceId, templateId, templateParams, publicKey)
       .then(() => {
         setStatus("success");
         formRef.current.reset();
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error("EmailJS Error Details:", {
+          status: error.status,
+          text: error.text,
+          message: error.message,
+        });
         setStatus("error");
       })
       .finally(() => setLoading(false));
   };
+
 
   return (
     <Container maxWidth="sm" sx={{ py: { xs: 8, md: 12 } }}>
