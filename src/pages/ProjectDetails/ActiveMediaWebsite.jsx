@@ -25,6 +25,13 @@ function ActiveMediaWebsite() {
         Business Website for Digital Media Company
       </Typography>
 
+      <Box
+        component="img"
+        src="https://via.placeholder.com/1200x420?text=Active+Media+Website"
+        alt="Active Media - hero"
+        sx={{ width: 1, borderRadius: 2, mb: 4 }}
+      />
+
       <Typography
         variant="body2"
         sx={{

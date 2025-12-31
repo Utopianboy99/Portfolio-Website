@@ -31,6 +31,13 @@ function ActiveFoundationTrust() {
         <Chip label="Non-Profit" color="secondary" variant="outlined" />
       </Stack>
 
+      <Box
+        component="img"
+        src="https://via.placeholder.com/1200x420?text=Active+Foundation+Trust"
+        alt="Active Foundation Trust - hero"
+        sx={{ width: 1, borderRadius: 2, mb: 4 }}
+      />
+
       <Typography color="text.secondary" mb={6}>
         <strong>Status:</strong> Completed (Design Concept)
       </Typography>

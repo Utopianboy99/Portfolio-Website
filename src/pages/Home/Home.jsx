@@ -204,11 +204,11 @@ function Home() {
       </section>
 
       {/* ================= ABOUT PREVIEW ================= */}
-      <Container maxWidth="lg" sx={{ py: 10 }}>
+      <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } }}>
         <Box
           display="grid"
           gridTemplateColumns={{ xs: "1fr", md: "1fr 1fr" }}
-          gap={6}
+          gap={{ xs: 3, md: 6 }}
           alignItems="center"
         >
           <Box>
@@ -237,7 +237,7 @@ function Home() {
 
           <Box
             sx={{
-              height: 360,
+              height: { xs: 250, md: 360 },
               borderRadius: 3,
               backgroundImage: `url(${IDEimg})`,
               backgroundSize: 'cover',
@@ -247,7 +247,7 @@ function Home() {
         </Box>
       </Container>
 
-      <Container maxWidth="lg" sx={{ py: 10 }}>
+      <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } }}>
         <Typography variant="h4" fontWeight={800} mb={1}>
           Selected Work
         </Typography>
@@ -263,7 +263,7 @@ function Home() {
             sm: "1fr 1fr",
             md: "1fr 1fr 1fr",
           }}
-          gap={4}
+          gap={{ xs: 2, md: 4 }}
         >
           {[
             { title: "Active Foundation Trust", type: "UI/UX & Frontend", image: ActiveFoundationImg },
@@ -297,7 +297,7 @@ function Home() {
       </Container>
 
       {/* ================= SKILLS & TECHNOLOGIES ================= */}
-      <Container maxWidth="lg" sx={{ py: 10 }}>
+      <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } }}>
         <Box textAlign="center" mb={6}>
           <Typography variant="h4" fontWeight={800} mb={2}>
             Skills & Technologies

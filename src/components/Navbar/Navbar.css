@@ -1,52 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Federant&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Federant&display=swap");
 
 .nav {
-    width: 100vw;
-    height: 10vh;
-    /* border:1px solid red; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 15px;
-    background-color: #020403;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background-color: #020403;
+  position: relative;
 }
 
 #me {
-    color: aliceblue;
-    font-family: "Federant", serif;
-    font-weight: 400;
-    font-style: normal;
-
+  color: aliceblue;
+  font-family: "Federant", serif;
 }
 
 .nav-link-box {
-    width: 30%;
-    /* border:1px solid red; */
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .navlinks {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    /* border:1px solid red; */
-    width: 40%;
-    font-family: "Federant", serif;
-    font-weight: 400;
-    font-style: normal;
-
+  display: flex;
+  gap: 24px;
+  font-family: "Federant", serif;
 }
 
 .navlinks a {
-    text-decoration: none;
-    color: aliceblue;
+  text-decoration: none;
+  color: aliceblue;
 }
 
-.contact-btn {
-    font-family: "Federant", serif;
-    font-weight: 400;
-    font-style: normal;
+/* HAMBURGER BUTTON */
+.menu-btn {
+  display: none;
+  color: white;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  width: 100%;
+  background-color: #020403;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  z-index: 100;
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* RESPONSIVE RULES */
+@media (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
 }

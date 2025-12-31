@@ -31,6 +31,13 @@ function RoyalKidz() {
         <Chip label="Node.js" color="secondary" variant="outlined" />
       </Stack>
 
+      <Box
+        component="img"
+        src="https://via.placeholder.com/1200x420?text=RoyalKidz+Nursery+School"
+        alt="RoyalKidz Nursery School - hero"
+        sx={{ width: 1, borderRadius: 2, mb: 4 }}
+      />
+
       <Typography color="text.secondary" mb={6}>
         <strong>Status:</strong> Planned / In Development
       </Typography>
