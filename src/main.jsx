@@ -8,12 +8,12 @@ import CssBaseline from '@mui/material/CssBaseline'
 import theme from './assets/theme.js'
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename="/Portfolio-Website">
-    <ThemeProvider theme={theme}>
-      <StrictMode>
+  <StrictMode>
+    <BrowserRouter basename="/Portfolio-Website">
+      <ThemeProvider theme={theme}>
         <CssBaseline />
         <App />
-      </StrictMode>,
-    </ThemeProvider>
-  </BrowserRouter>
+      </ThemeProvider>
+    </BrowserRouter>
+  </StrictMode>
 )
